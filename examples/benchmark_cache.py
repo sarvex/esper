@@ -102,7 +102,7 @@ class MovementProcessor(Processor):
         for ent, (vel, pos) in self.world.get_components(Velocity, Position):
             pos.x += vel.x
             pos.y += vel.y
-            print("Current Position: {}".format((int(pos.x), int(pos.y))))
+            print(f"Current Position: {(int(pos.x), int(pos.y))}")
 
 
 #############################
@@ -150,7 +150,7 @@ for current_pass in range(10):
 averaged_results = [sorted(e)[0] for e in zip(*results)]
 
 pyplot.ylabel("Query time (ms)")
-pyplot.xlabel("Query of {} entities".format(MAX_ENTITIES))
+pyplot.xlabel(f"Query of {MAX_ENTITIES} entities")
 pyplot.plot(averaged_results, label="Average query time")
 pyplot.legend(bbox_to_anchor=(0.5, 1))
 pyplot.show()

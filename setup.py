@@ -3,7 +3,7 @@ from setuptools import setup
 
 with open('esper/__init__.py') as f:
     info = {}
-    for line in f.readlines():
+    for line in f:
         if line.startswith('version'):
             exec(line, info)
             break

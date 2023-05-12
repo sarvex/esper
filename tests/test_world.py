@@ -250,10 +250,10 @@ def test_clear_cache(populated_world):
 def test_cache_results(world):
     _______ = world.create_entity(ComponentA(), ComponentB(), ComponentC())
     entity2 = world.create_entity(ComponentB(), ComponentC(), ComponentD())
-    assert len(list(query for query in world.get_components(ComponentB, ComponentC))) == 2
+    assert len(list(world.get_components(ComponentB, ComponentC))) == 2
 
     world.delete_entity(entity2, immediate=True)
-    assert len(list(query for query in world.get_components(ComponentB, ComponentC))) == 1
+    assert len(list(world.get_components(ComponentB, ComponentC))) == 1
 
 
 def test_entity_exists(world):

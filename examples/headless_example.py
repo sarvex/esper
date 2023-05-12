@@ -31,7 +31,7 @@ class MovementProcessor(Processor):
         for ent, (vel, pos) in self.world.get_components(Velocity, Position):
             pos.x += vel.x
             pos.y += vel.y
-            print("Current Position: {}".format((int(pos.x), int(pos.y))))
+            print(f"Current Position: {(int(pos.x), int(pos.y))}")
 
 
 ##########################################################
